@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Car Parking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px 50px 0 50px;
+            padding: 0;
+            background: linear-gradient(to right, #3f3f3f, #c0b9b8);
+            color: #333;
+            min-height: 95vh;
+            /* background: url(./sfs.jpg);
+            background-repeat: no-repeat;
+            background-size: cover; */
+            opacity: 0.5;
+            
+            
+        }
+
+        header {
+            background: #3434348a;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .slot {
+            display: inline-block;
+            width: 150px;
+            height: 100px;
+            margin: 10px;
+            text-align: center;
+            border-radius: 8px;
+            font-size: 1.2em;
+            font-weight: bold;
+            display: inline-flex;
+            flex-direction: column;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .slot.available {
+            background: #4caf50;
+            color: white;
+        }
+
+        .slot.occupied {
+            background: #f44336;
+            color: white;
+        }
+
+        .status {
+            margin: 20px 0;
+            text-align: center;
+            font-size: 1.5em;
+        }
+
+        footer {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 0.9em;
+            color: #ffffff;
+        }
+        .header{
+            text-align: center;
+            color: #ffffff;
+        }
+        a{
+            text-decoration: none;
+            color: #f60505;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <!-- <header>Live Car Parking Availability</header> -->
+     <div class="header">
+        <h1>Live Car Park Availability</h1>
+     </div>
+    
+
+    
+    <div class="container">
+        <h2>Gate 1 Inner Ground</h2>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=10.587605,76.502236" target="_blank"><h3>Ground Location !</h3></a>
+        Vehicles coming from Karipali, valliyode can park here.
+        <div class="status">Status: Fast Filling<br>Available Slots: 50</div>
+
+        <div id="slots">
+            <!-- Parking slots will be rendered here -->
+            <!-- <div class="slot available">Slot 1</div>
+            <div class="slot occupied">Slot 2</div>
+            <div class="slot available">Slot 3</div>
+            <div class="slot occupied">Slot 4</div>
+            <div class="slot available">Slot 5</div> -->
+        </div>
+    </div>
+    <div class="container">
+        <h4><style>h4{color:rgb(0, 0, 0)}</style>No more Slots?</h4>
+        <h4><a href="./park1.html" target="_blank" >Click me !</h4></a>
+    </div>
+
+    <footer>Concept Rev. Fr. Joby Varghese T.O.R <br> Powered by Daniel <br>St. Francis School Live Parking System &copy; 2025</footer>
+
+    <script>
+        // Example JavaScript to dynamically update available slots
+        const slots = document.querySelectorAll('.slot');
+        const availableCount = document.getElementById('availableCount');
+
+        function updateAvailability() {
+            let availableSlots = 0;
+            slots.forEach(slot => {
+                if (slot.classList.contains('available')) {
+                    availableSlots++;
+                }
+            });
+            availableCount.textContent = availableSlots;
+        }
+
+        updateAvailability();
+    </script>
+</body>
+</html>
